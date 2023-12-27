@@ -6,8 +6,7 @@ el perimetro, radio y
 area de un circulo
 """
 
-class Circulo:
-
+class circulo:
 	def __init__(self, radio):
 
 		# Propiedades
@@ -15,16 +14,16 @@ class Circulo:
 		self.__radio = radio
 		self.__pi = 3.1415
 
-	def Calcular_Perimetro(self):
-		print(f"Perimetro: {2*self.__pi*self.__radio}")
+	def calcular_perimetro(self):
+		print(f'Perimetro: {2 * self.__pi*self.__radio}')
 
-	def Calcular_Area(self):
-		print(f"Area: {self.__pi*self.__radio**2}")
+	def calcular_area(self):
+		print(f'Area: {self.__pi * self.__radio ** 2}')
 
-	def Obtener_PI(self):
-		print(f"PI: {self.__pi}")
+	def obtener_pi(self):
+		print(f'PI: {self.__pi}')
 
-	def Obtener_Radio(self, valor):
+	def obtener_radio(self, valor):
 
 		# Si el valor no es positivo no se mostrara el radio
 
@@ -32,25 +31,24 @@ class Circulo:
 
 			if valor > 0:
 				self.__radio = valor
-				print(f"Radio: {self.__radio}")
+				print(f'Radio: {self.__radio}')
 
 			else:
-				print("No puede ser negativo")
-
+				print('No puede ser negativo')
 		else:
-			print("Tiene que ser un numero positivo")
+			print('Tiene que ser un numero positivo')
 
 """
 Muestra del perimetro, 
 area, radio y PI de un circulo
 """
 
-print("Propiedades de un circulo:\n")
+print('Propiedades de un circulo:\n')
 
-circulo = Circulo(2.5)
+circulo = circulo(2.5)
 
-circulo.Calcular_Perimetro()
-circulo.Calcular_Area()
+circulo.calcular_perimetro()
+circulo.calcular_area()
 
-circulo.Obtener_PI()
-circulo.Obtener_Radio(1)
+circulo.obtener_pi()
+circulo.obtener_radio(1)

@@ -5,8 +5,7 @@ en un ejemplo de ver el nombre,
 edad y dni de una persona y un trabajador
 """
 
-class Persona:
-
+class persona:
 	def __init__(self, nombre, edad, dni):
 
 		# Propiedades
@@ -17,12 +16,12 @@ class Persona:
 
 	# Mostrar informacion
 
-	def Presentarse(self):
-		print(f"Nombre: {self.nombre} \nEdad: {self.edad}")
+	def presentarse(self):
+		print(f'Nombre: {self.nombre} \nEdad: {self.edad}')
 
-class Trabajador(Persona):
+class trabajador(persona):
 
-	# Hereda las propiedades de la clase Persona
+	# Hereda las propiedades de la clase persona
 	
 	def __init__(self, nombre, edad, dni, sueldo, cargo, empresa):
 		super().__init__(nombre, edad, dni)
@@ -33,19 +32,20 @@ class Trabajador(Persona):
 
 	# Muestra el sueldo calculado
 
-	def Calcular_Sueldo(self):
-		print(f"Sueldo: {12*self.sueldo + 2000}")
+	def calcular_sueldo(self):
+		print(f'Sueldo: {12 * self.sueldo + 2000}')
 
 # Muestra los nombres, edades y dni
 
-print("Informacion:\n")
+print('Informacion:\n')
 
-oscar = Persona("Oscar", 23, "76893434")
-oscar.Presentarse()
+oscar = persona('Oscar', 23, '76893434')
+oscar.presentarse()
 
-print("dni:", oscar.dni)
+print('dni:', oscar.dni)
 
-trabajador = Trabajador("Bredalis", 34, "564g98800", 21000, "Programador", "Google")
-trabajador.Presentarse()
+trabajador = trabajador(
+	'Bredalis', 34, '564g98800', 21000, 'Programador', 'Google')
 
-trabajador.Calcular_Sueldo()
+trabajador.presentarse()
+trabajador.calcular_sueldo()

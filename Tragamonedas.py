@@ -3,7 +3,7 @@
 
 from random import randint
 
-class Tragamonedas:
+class tragamonedas:
 
 	def __init__(self, id, premio):
 
@@ -13,7 +13,7 @@ class Tragamonedas:
 		self.jackpots = 0 
 
 	def __str__(self):
-		return "id: " + str(self.id) + " - premio: " + str(self.premio)
+		return 'id: ' + str(self.id) + ' - premio: ' + str(self.premio)
 
 	def __eq__(self, Otro):
 		return self.monedas == Otro.monedas
@@ -29,20 +29,20 @@ class Tragamonedas:
 		self.monedas += 1
 		
 		numeros = randint(0, 9), randint(0, 9), randint(0, 9)
-		mensaje = ""
+		mensaje = ''
 
 		if numeros[0] == numeros[1] == numeros[2]:
 
 			self.jackpots += 1
-			mensaje = f"Ganaste {self.premio}"
+			mensaje = f'Ganaste {self.premio}'
 
 		else:
-			mensaje = "Mejor suerte para la proxima"
+			mensaje = 'Mejor suerte para la proxima'
 
 		return numeros, mensaje
 
-jugador_1 = Tragamonedas("1", "20000$")
-jugador_2 = Tragamonedas("1", "20000$")
+jugador_1 = tragamonedas('1', '20000$')
+jugador_2 = tragamonedas('1', '20000$')
 
 print(jugador_1)
 print(jugador_1.id == jugador_2.id)

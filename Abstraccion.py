@@ -8,7 +8,7 @@ relevantes para el problema en cuestión.
 
 from abc import ABC, abstractmethod
 
-class Personaje(ABC):
+class personaje(ABC):
 
 	@abstractmethod
 	def __init__(self, nombre):
@@ -19,64 +19,64 @@ class Personaje(ABC):
 		self.vida = 100
 
 	@abstractmethod
-	def Atacar(self, objectivo):
+	def atacar(self, objectivo):
 		pass
 
 	@abstractmethod
-	def Estado(self):
-		print(f"Nombre: {self.nombre} \nNivel: {self.nivel}")
+	def estado(self):
+		print(f'Nombre: {self.nombre} \nNivel: {self.nivel}')
 
-	def Subir_nivel(self):
+	def subir_nivel(self):
 		self.nivel += 1
 
-	def Obtener_inventario(self):
-		print(f"Inventario de: {self.nombre}")
+	def obtener_inventario(self):
+		print(f'Inventario de: {self.nombre}')
 
 		for objecto in self.inventario:
 			print(objecto)
 
-class Mago(Personaje):
+class mago(personaje):
 
 	def __init__(self, nombre):
 		super().__init__(nombre)
 
 		self.vida = 120
 		self.inteligencia = 95
-		self.inventario = ["Pocion de Mana", "Grimorio"]
+		self.inventario = ['Pocion de Mana', 'Grimorio']
 
-	def Estado(self):
-		print("Clase: Mago")
-		super().Estado()
+	def estado(self):
+		print('Clase: Mago')
+		super().estado()
 
-	def Atacar(self, objectivo):
+	def atacar(self, objectivo):
 		objectivo.vida -= self.inteligencia*0.6
-		print(f"Vida actual del objetivo es: {objectivo.vida}")
+		print(f'Vida actual del objetivo es: {objectivo.vida}')
 
-class Guerrero(Personaje):
+class guerrero(personaje):
 
 	def __init__(self, nombre):
 		super().__init__(nombre)
 
 		self.vida = 200
 		self.Fuerza = 75
-		self.inventario = ["Pocion de vida", "Escudo", "Espada"]
+		self.inventario = ['Pocion de vida', 'Escudo', 'Espada']
 
-	def Estado(self):
-		print("Clase: Guerrero")
-		super().Estado()
+	def estado(self):
+		print('Clase: Guerrero')
+		super().estado()
 
-	def Atacar(self, objectivo):
+	def atacar(self, objectivo):
 		objectivo.vida -= self.Fuerza*0.8
-		print(f"El objetivo se ha quedado con {objectivo.vida} puntos de vida")
+		print(f'El objetivo se ha quedado con {objectivo.vida} puntos de vida')
 
-guerrero = Guerrero("Pedro")
-mago = Mago("Yuto")
+guerrero = guerrero('Pedro')
+mago = mago('Yuto')
 
-guerrero.Estado()
-mago.Estado()
+guerrero.estado()
+mago.estado()
 
-guerrero.Obtener_inventario()
-mago.Obtener_inventario()
+guerrero.obtener_inventario()
+mago.obtener_inventario()
 
-guerrero.Atacar(mago)
-mago.Atacar(guerrero)
+guerrero.atacar(mago)
+mago.atacar(guerrero)
